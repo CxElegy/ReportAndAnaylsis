@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<meta property="og:type" content="article">
+<meta property="og:title" content="日本中文学习制度调研">
+<meta property="og:description" content="以一位中国血统、日本国籍高中生在校外补习班学中文为例，用核实过的公开数据梳理日本的中文学习制度。">
+<title>日本中文学习制度调研</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="以一位中国血统、日本国籍高中生在校外补习班学中文为例，梳理日本的中文学习制度：共通测试、高中开课、继承语教育与教材。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700;900&display=swap">
+<style>
+/* Layout: a report printed on manuscript-grid paper (原稿用纸) — one reading column, a sticky table of contents on wide screens, evidence tables set off as the only boxed objects. */
+:root {
+  --paper: #f4f6f8;
+  --sheet: #ffffff;
+  --ink: #161b26;
+  --ink-2: #4d5668;
+  --rule: #d6dbe4;
+  --grid: #c9d3e6;
+  --indigo: #2c4985;
+  --indigo-soft: #e7ecf6;
+  --series: #3b62b8;
+  --seal: #b23c2a;
+  --ok: #26704c;
+  --ok-soft: #e3f1e9;
+  --fix: #8a5800;
+  --fix-soft: #f7ecd6;
+  --unk: #5f6675;
+  --unk-soft: #eceef2;
+
+  --f-display: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --f-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f131b; --sheet: #161b25; --ink: #e8ebf1; --ink-2: #a3abbb; --rule: #2a3140; --grid: #263252;
+    --indigo: #93abe2; --indigo-soft: #1c2640; --series: #5f86e0; --seal: #e3826b;
+    --ok: #7cc9a0; --ok-soft: #16291f; --fix: #e2b25a; --fix-soft: #2e2512; --unk: #a5acb9; --unk-soft: #20242d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f131b; --sheet: #161b25; --ink: #e8ebf1; --ink-2: #a3abbb; --rule: #2a3140; --grid: #263252;
+  --indigo: #93abe2; --indigo-soft: #1c2640; --series: #5f86e0; --seal: #e3826b;
+  --ok: #7cc9a0; --ok-soft: #16291f; --fix: #e2b25a; --fix-soft: #2e2512; --unk: #a5acb9; --unk-soft: #20242d;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--indigo); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--indigo); outline-offset: 2px; border-radius: 2px; }
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+/* ---------- Masthead ---------- */
+.mast { padding-block: var(--s7) var(--s6); border-bottom: 1px solid var(--rule); }
+.mast-inner { display: grid; gap: var(--s5); }
+.eyebrow {
+  font-family: var(--f-data); font-size: 12px; letter-spacing: .08em; color: var(--ink-2);
+  display: flex; flex-wrap: wrap; gap: var(--s2) var(--s4);
+}
+.grid-title {
+  --cell: clamp(44px, 11vw, 76px);
+  display: flex; flex-wrap: wrap; gap: 0;
+  margin: 0; font-family: var(--f-display); font-weight: 900;
+  font-size: calc(var(--cell) * .62); line-height: 1; color: var(--ink);
+}
+.grid-title span {
+  width: var(--cell); height: var(--cell);
+  display: grid; place-items: center;
+  border: 1px solid var(--grid); margin: 0 -1px -1px 0;
+  background:
+    linear-gradient(var(--grid), var(--grid)) center / 1px 100% no-repeat,
+    linear-gradient(var(--grid), var(--grid)) center / 100% 1px no-repeat;
+  background-blend-mode: normal;
+}
+.grid-title span > b { font-weight: inherit; background: var(--paper); padding: 0 1px; line-height: 1.05; }
+.grid-title .seal { color: var(--seal); }
+.subtitle { margin: 0; font-family: var(--f-display); font-weight: 600; font-size: clamp(20px, 3.2vw, 26px); line-height: 1.45; text-wrap: balance; max-width: 30em; }
+.lede { margin: 0; color: var(--ink-2); max-width: 40em; }
+.meta-row { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); font-size: 13px; color: var(--ink-2); }
+.meta-row dt { display: inline; font-weight: 500; color: var(--ink); }
+.meta-row dd { display: inline; margin: 0 0 0 .4em; }
+
+/* ---------- Body layout ---------- */
+.layout { display: grid; gap: var(--s6); padding-block: var(--s6) var(--s8); }
+@media (min-width: 1024px) {
+  .layout { grid-template-columns: 200px minmax(0, 1fr); gap: var(--s7); }
+}
+.toc { font-size: 14px; }
+.toc-label { font-family: var(--f-data); font-size: 12px; letter-spacing: .08em; color: var(--ink-2); margin: 0 0 var(--s2); }
+.toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s1) var(--s2); }
+.toc a { display: block; text-decoration: none; color: var(--ink-2); padding: 4px 10px; border: 1px solid var(--rule); border-radius: 999px; }
+.toc a:hover { color: var(--indigo); border-color: var(--indigo); }
+@media (min-width: 1024px) {
+  .toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + var(--s5)); align-self: start; }
+  .toc ol { flex-direction: column; gap: 0; border-left: 1px solid var(--rule); }
+  .toc a { border: 0; border-radius: 0; padding: 6px 0 6px var(--s4); margin-left: -1px; border-left: 2px solid transparent; }
+  .toc a:hover { border-left-color: var(--indigo); }
+}
+
+main { min-width: 0; max-width: 760px; display: grid; gap: var(--s8); }
+section { display: grid; gap: var(--s4); min-width: 0; scroll-margin-top: var(--s5); }
+.sec-head { display: grid; gap: var(--s1); }
+.sec-no { font-family: var(--f-display); font-weight: 700; color: var(--indigo); font-size: 15px; letter-spacing: .1em; }
+h2 { margin: 0; font-family: var(--f-display); font-weight: 700; font-size: clamp(24px, 3.4vw, 30px); line-height: 1.35; text-wrap: balance; }
+h3 { margin: var(--s4) 0 0; font-family: var(--f-display); font-weight: 700; font-size: 20px; line-height: 1.4; text-wrap: balance; }
+p { margin: 0; }
+.prose { display: grid; gap: var(--s4); }
+.prose ul, .prose ol { margin: 0; padding-left: 1.3em; display: grid; gap: var(--s2); }
+strong { font-weight: 700; }
+.note { font-size: 14px; color: var(--ink-2); }
+
+/* Key findings */
+.findings { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 2px solid var(--ink); }
+.findings li { display: grid; grid-template-columns: 2.2em minmax(0, 1fr); gap: var(--s3); padding-block: var(--s4); border-bottom: 1px solid var(--rule); }
+.findings .k { font-family: var(--f-display); font-weight: 900; color: var(--indigo); font-size: 20px; line-height: 1.5; }
+
+/* Chat transcript */
+.transcript { background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--s5) var(--s4); display: grid; gap: var(--s4); }
+.transcript-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s2); font-size: 13px; color: var(--ink-2); border-bottom: 1px dashed var(--rule); padding-bottom: var(--s3); }
+.turns { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.turn { display: grid; grid-template-columns: 4.5em minmax(0, 1fr); gap: var(--s3); align-items: baseline; }
+.who { font-size: 12px; font-family: var(--f-data); letter-spacing: .04em; color: var(--ink-2); }
+.turn.a .who { color: var(--indigo); }
+.say { margin: 0; }
+.turn.a .say { font-weight: 500; }
+.time { grid-column: 1 / -1; font-family: var(--f-data); font-size: 12px; color: var(--ink-2); text-align: center; }
+
+/* Tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--rule); border-radius: var(--radius); background: var(--sheet); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; line-height: 1.6; }
+caption { text-align: left; padding: var(--s3) var(--s4); font-weight: 700; caption-side: top; border-bottom: 1px solid var(--rule); }
+th, td { text-align: left; vertical-align: top; padding: var(--s3) var(--s4); border-bottom: 1px solid var(--rule); }
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
+thead th { font-weight: 500; color: var(--ink-2); font-size: 13px; white-space: nowrap; background: var(--indigo-soft); }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+tbody th { font-weight: 500; min-width: 6.5em; }
+
+/* Status chips */
+.chip { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; line-height: 1; padding: 4px 8px; border-radius: 999px; white-space: nowrap; font-weight: 500; }
+.chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.chip.ok { color: var(--ok); background: var(--ok-soft); }
+.chip.fix { color: var(--fix); background: var(--fix-soft); }
+.chip.unk { color: var(--unk); background: var(--unk-soft); }
+.chip.chat { color: var(--indigo); background: var(--indigo-soft); }
+
+/* Callout */
+.callout { border-left: 3px solid var(--seal); padding: var(--s1) 0 var(--s1) var(--s4); display: grid; gap: var(--s2); }
+.callout-label { font-family: var(--f-data); font-size: 12px; letter-spacing: .08em; color: var(--seal); }
+
+/* Chart */
+.figure { margin: 0; background: var(--sheet); border: 1px solid var(--rule); border-radius: var(--radius); padding: var(--s4); display: grid; gap: var(--s3); min-width: 0; }
+.figure figcaption { display: grid; gap: 2px; }
+.fig-title { font-weight: 700; }
+.fig-sub { font-size: 13px; color: var(--ink-2); }
+.chart { position: relative; overflow-x: auto; }
+.chart svg { display: block; width: 100%; height: auto; min-width: 420px; }
+.chart .gridline { stroke: var(--rule); stroke-width: 1; }
+.chart .axis-text { fill: var(--ink-2); font-family: var(--f-data); font-size: 11px; }
+.chart .val-text { fill: var(--ink); font-family: var(--f-data); font-size: 11px; font-weight: 500; }
+.chart .bar { fill: var(--series); }
+.chart .divider { stroke: var(--ink-2); stroke-width: 1; stroke-dasharray: 3 3; opacity: .6; }
+.chart .line { fill: none; stroke: var(--series); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart .area { fill: var(--series); opacity: .1; }
+.chart .dot { fill: var(--series); stroke: var(--sheet); stroke-width: 2; }
+.chart .hit { fill: transparent; }
+.chart .mark { outline: none; }
+.chart .mark:hover .bar, .chart .mark:focus-visible .bar { opacity: .78; }
+.chart .mark:hover .dot, .chart .mark:focus-visible .dot { r: 6; }
+.chart .mark:focus-visible .hit { stroke: var(--indigo); stroke-width: 1; }
+.tip[hidden] { display: none; }
+.tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--paper); font-size: 12px; line-height: 1.5; padding: 6px 10px; border-radius: 4px; white-space: nowrap; transform: translate(-50%, -100%); }
+
+/* Sources */
+.sources { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; font-size: 14px; }
+.sources li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--s2) var(--s4); padding-block: var(--s3); border-bottom: 1px solid var(--rule); align-items: start; }
+.sources .src-title { overflow-wrap: anywhere; }
+.sources .src-url { display: block; font-family: var(--f-data); font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
+
+/* Questions */
+.qs { counter-reset: q; list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s3); }
+.qs li { counter-increment: q; display: grid; grid-template-columns: 2em minmax(0, 1fr); gap: var(--s2); }
+.qs li::before { content: "Q" counter(q); font-family: var(--f-data); font-size: 13px; color: var(--indigo); line-height: 1.8; }
+
+footer { border-top: 1px solid var(--rule); padding-block: var(--s5) var(--s7); font-size: 13px; color: var(--ink-2); }
+footer p + p { margin-top: var(--s2); }
+
+@media (max-width: 480px) {
+  .turn { grid-template-columns: 1fr; gap: 0; }
+  .transcript { padding: var(--s4) var(--s3); }
+  th, td { padding: var(--s2) var(--s3); }
+}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap mast-inner">
+    <div class="eyebrow"><span>调研报告</span><span>课题：日本的中文学习制度</span><span>2026年10月</span></div>
+    <h1 class="grid-title" aria-label="在日本学中文">
+      <span aria-hidden="true"><b>在</b></span><span aria-hidden="true"><b>日</b></span><span aria-hidden="true"><b>本</b></span><span aria-hidden="true"><b>学</b></span><span aria-hidden="true"><b class="seal">中</b></span><span aria-hidden="true"><b class="seal">文</b></span>
+    </h1>
+    <p class="subtitle">以一位中国血统、日本国籍的高中生为例，看日本的中文学习制度</p>
+    <p class="lede">一位中国家庭出身、在日本长大的高中生，学校里没有中文课，于是去校外补习班学；而日本的大学入学共通测试允许用中文代替英语应考。本报告从这段真实对话出发，用公开资料核对每一个制度层面的说法。</p>
+    <dl class="meta-row">
+      <div><dt>案例来源</dt><dd>微信对话（已匿名）</dd></div>
+      <div><dt>数据来源</dt><dd>大学入试中心、文部科学省、出入国在留管理厅等公开资料</dd></div>
+      <div><dt>核实方式</dt><dd>每条数据经独立二次核对并标注状态</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="wrap layout">
+  <nav class="toc" aria-label="目录">
+    <p class="toc-label">目录</p>
+    <ol>
+      <li><a href="#summary">要点</a></li>
+      <li><a href="#case">案例</a></li>
+      <li><a href="#exam">共通测试</a></li>
+      <li><a href="#highschool">高中课程</a></li>
+      <li><a href="#heritage">继承语教育</a></li>
+      <li><a href="#materials">教材与考试</a></li>
+      <li><a href="#analysis">分析</a></li>
+      <li><a href="#next">后续调研</a></li>
+      <li><a href="#sources">资料来源</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <section id="summary" aria-labelledby="summary-h">
+      <div class="sec-head"><span class="sec-no">一、</span><h2 id="summary-h">要点</h2></div>
+      <ol class="findings">
+        <li><span class="k" aria-hidden="true">考</span><p><strong>共通测试确实可以用中文代替英语。</strong>外语科可在英、德、法、中、韩5门中任选1门；中文只考笔试（80分钟，200分），不考听力。2026年本试有866人考中文，在外语考生中只占约0.19%，但在英语以外的语种里人数最多。</p></li>
+        <li><span class="k" aria-hidden="true">分</span><p><strong>中文平均分长期远高于英语。</strong>2025年中文平均分（百分制）83.01，英语阅读57.69。大学入试中心的报告书推测这是因为“中文母语考生多”；2026年题型调整后中文平均分降到72.94，仍是5个语种中最高。官方没有考生国籍或家庭背景的统计。</p></li>
+        <li><span class="k" aria-hidden="true">校</span><p><strong>高中里的中文课很少。</strong>2023年度开设中文的高中等为449所，约为全国高中的9%；履修者延人数16,936人。开课校数在2009年达到峰值580所，此后一路减少。学习指导要领里中文没有自己的目标，只是“准照英语”教。</p></li>
+        <li><span class="k" aria-hidden="true">外</span><p><strong>华裔孩子的中文主要在校外学。</strong>全日本只有5所中华学校，都属于“各种学校”；更多孩子去周末中文学校或民间补习班，常见教材是暨南大学的《中文》。日本国籍的中国血统孩子不在外国人统计里，规模无法从官方数据看出。</p></li>
+        <li><span class="k" aria-hidden="true">例</span><p><strong>案例正好落在这条“校外通道”上。</strong>学校没有中文课，补习班里几乎都是中国家庭的孩子，这是继承语学习，而不是外语学习。共通测试给了升学上的动机，但不少大学的个别考试只考英语，用中文应考前要逐校查招生简章。</p></li>
+      </ol>
+    </section>
+
+    <section id="case" aria-labelledby="case-h">
+      <div class="sec-head"><span class="sec-no">二、</span><h2 id="case-h">案例：从一段聊天说起</h2></div>
+      <div class="prose">
+        <p>调研者需要做一份“日本中文学习制度”的研究，想到朋友的妹妹在日本上高中、家里是中国人，于是在微信上问了几个问题。下面是对话中与课题有关的部分，按原文摘录；人名和头像已去掉。</p>
+      </div>
+      <div class="transcript" role="group" aria-label="对话摘录">
+        <div class="transcript-head"><span>提问：调研者　回答：该学生的家人</span><span>下午 2:52 – 3:26</span></div>
+        <ol class="turns">
+          <li class="time" aria-hidden="true">下午 2:52</li>
+          <li class="turn q"><span class="who">提问</span><p class="say">我突然想起来，你妹属于在日华人对吧，我做作业，需要做个日本中文学习制度的研究，你妹在高中有设置中文班嘛</p></li>
+          <li class="turn a"><span class="who">回答</span><p class="say">在日日本人。不过有报中文班</p></li>
+          <li class="turn q"><span class="who">提问</span><p class="say">血缘上是中国的嘛，家里人也是中国人，算华人吧？是高中里的嘛，还是民间机构</p></li>
+          <li class="time" aria-hidden="true">下午 3:11</li>
+          <li class="turn a"><span class="who">回答</span><p class="say">也不是纯华人吧。就是外面的补课班。然后日本高考好像可以用中文取代英语</p></li>
+          <li class="time" aria-hidden="true">下午 3:23</li>
+          <li class="turn q"><span class="who">提问</span><p class="say">外面的补课班是用的日本人还是中国人还是都有啊？你妹打算用中文高考嘛</p></li>
+          <li class="turn a"><span class="who">回答</span><p class="say">日本人，但基本上都是中国家长才会让孩子来学中文。中国家庭，小孩在日本长大的，没有学习中文的环境</p></li>
+          <li class="turn q"><span class="who">提问</span><p class="say">懂了。基本都是日本老师，没有中国老师？</p></li>
+          <li class="turn a"><span class="who">回答</span><p class="say">也是中国老师</p></li>
+          <li class="turn q"><span class="who">提问</span><p class="say">用的哪一本书，你知道不</p></li>
+          <li class="turn a"><span class="who">回答</span><p class="say">不知道</p></li>
+        </ol>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>从对话中能确认的信息</caption>
+          <thead><tr><th scope="col">项目</th><th scope="col">对话中的说法</th><th scope="col">说明</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">身份</th><td>“在日日本人”，“也不是纯华人”</td><td>日本国籍，家人是中国人。家人自己不把她归为“华人”，说明国籍和血缘在这类家庭里是分开看的。</td></tr>
+            <tr><th scope="row">学校</th><td>高中没有中文班</td><td>中文学习发生在学校之外。</td></tr>
+            <tr><th scope="row">学习场所</th><td>“外面的补课班”</td><td>民间机构，不是中华学校，也不是学校的选修课。</td></tr>
+            <tr><th scope="row">学生构成</th><td>“日本人，但基本上都是中国家长才会让孩子来学中文”；“中国家庭，小孩在日本长大的，没有学习中文的环境”</td><td>学生多为日本国籍，但几乎都来自中国家庭。这是典型的“继承语学习者”，不是把中文当外语学的日本学生。</td></tr>
+            <tr><th scope="row">师资</th><td>“也是中国老师”</td><td>“日本人”一句的所指有歧义：提问者理解为老师，回答者随后说老师“也是中国老师”。老师全是中国人，还是中日老师都有，需要再问一次。</td></tr>
+            <tr><th scope="row">升学动机</th><td>“日本高考好像可以用中文取代英语”</td><td>说法正确，见下一节。她本人是否打算用中文应考，对话里没有回答。</td></tr>
+            <tr><th scope="row">教材</th><td>不知道</td><td>需要后续确认，见“后续调研”。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="exam" aria-labelledby="exam-h">
+      <div class="sec-head"><span class="sec-no">三、</span><h2 id="exam-h">大学入学共通测试中的中文</h2></div>
+      <div class="prose">
+        <p>对话里说的“日本高考”，指的是每年1月举行的<strong>大学入学共通测试</strong>（2021年起取代“大学入试中心考试”）。国公立大学基本都要求考生参加，许多私立大学也用它的成绩招生。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>外语科的考法（2027年1月考试）</caption>
+          <thead><tr><th scope="col">科目</th><th scope="col">考试内容</th><th scope="col" class="num">满分</th><th scope="col">说明</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">英语</th><td>阅读（80分钟）＋听力（60分钟，作答30分钟）</td><td class="num">100＋100</td><td>各大学自行决定两者的换算比例。</td></tr>
+            <tr><th scope="row">中文、韩语、德语、法语</th><td>笔试（80分钟），出题范围准照英语</td><td class="num">200</td><td>选这4门的考生不能参加听力考试。报名时申请所需语种的试题册。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <figure class="figure">
+        <figcaption><span class="fig-title" id="c1t">中文考生人数，2018–2026年（本试）</span><span class="fig-sub">单位：人。2018–2020年为大学入试中心考试，2021年为共通测试第1日程。</span></figcaption>
+        <div class="chart" role="list" aria-label="各年中文考生人数"><svg viewBox="0 0 640 272" role="img" aria-labelledby="c1t">
+<line class="gridline" x1="48" x2="628" y1="228.0" y2="228.0"/>
+<text class="axis-text" x="40" y="232.0" text-anchor="end">0</text>
+<line class="gridline" x1="48" x2="628" y1="178.0" y2="178.0"/>
+<text class="axis-text" x="40" y="182.0" text-anchor="end">250</text>
+<line class="gridline" x1="48" x2="628" y1="128.0" y2="128.0"/>
+<text class="axis-text" x="40" y="132.0" text-anchor="end">500</text>
+<line class="gridline" x1="48" x2="628" y1="78.0" y2="78.0"/>
+<text class="axis-text" x="40" y="82.0" text-anchor="end">750</text>
+<line class="gridline" x1="48" x2="628" y1="28.0" y2="28.0"/>
+<text class="axis-text" x="40" y="32.0" text-anchor="end">1,000</text>
+<line class="divider" x1="241.3" x2="241.3" y1="14" y2="228"/>
+<text class="axis-text" x="235.3" y="22" text-anchor="end">← 中心考试</text>
+<text class="axis-text" x="247.3" y="22">共通测试 →</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2018年 · 中心考试：574人" data-tip="2018年 · 中心考试：574人" data-x="80.2" data-y="113.2"><rect class="hit" x="48.0" y="28" width="64.4" height="200"/><path class="bar" d="M68.2,228.0 V117.2 Q68.2,113.2 72.2,113.2 H88.2 Q92.2,113.2 92.2,117.2 V228.0 Z"/></g>
+<text class="val-text" x="80.2" y="107.2" text-anchor="middle">574</text>
+<text class="axis-text" x="80.2" y="246" text-anchor="middle">2018</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2019年 · 中心考试：665人" data-tip="2019年 · 中心考试：665人" data-x="144.7" data-y="95.0"><rect class="hit" x="112.4" y="28" width="64.4" height="200"/><path class="bar" d="M132.7,228.0 V99.0 Q132.7,95.0 136.7,95.0 H152.7 Q156.7,95.0 156.7,99.0 V228.0 Z"/></g>
+<text class="axis-text" x="144.7" y="246" text-anchor="middle">2019</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2020年 · 中心考试：667人" data-tip="2020年 · 中心考试：667人" data-x="209.1" data-y="94.6"><rect class="hit" x="176.9" y="28" width="64.4" height="200"/><path class="bar" d="M197.1,228.0 V98.6 Q197.1,94.6 201.1,94.6 H217.1 Q221.1,94.6 221.1,98.6 V228.0 Z"/></g>
+<text class="axis-text" x="209.1" y="246" text-anchor="middle">2020</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2021年 · 共通测试（第1日程）：625人" data-tip="2021年 · 共通测试（第1日程）：625人" data-x="273.6" data-y="103.0"><rect class="hit" x="241.3" y="28" width="64.4" height="200"/><path class="bar" d="M261.6,228.0 V107.0 Q261.6,103.0 265.6,103.0 H281.6 Q285.6,103.0 285.6,107.0 V228.0 Z"/></g>
+<text class="axis-text" x="273.6" y="246" text-anchor="middle">2021</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2022年 · 共通测试：599人" data-tip="2022年 · 共通测试：599人" data-x="338.0" data-y="108.2"><rect class="hit" x="305.8" y="28" width="64.4" height="200"/><path class="bar" d="M326.0,228.0 V112.2 Q326.0,108.2 330.0,108.2 H346.0 Q350.0,108.2 350.0,112.2 V228.0 Z"/></g>
+<text class="axis-text" x="338.0" y="246" text-anchor="middle">2022</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2023年 · 共通测试：735人" data-tip="2023年 · 共通测试：735人" data-x="402.4" data-y="81.0"><rect class="hit" x="370.2" y="28" width="64.4" height="200"/><path class="bar" d="M390.4,228.0 V85.0 Q390.4,81.0 394.4,81.0 H410.4 Q414.4,81.0 414.4,85.0 V228.0 Z"/></g>
+<text class="axis-text" x="402.4" y="246" text-anchor="middle">2023</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2024年 · 共通测试：781人" data-tip="2024年 · 共通测试：781人" data-x="466.9" data-y="71.8"><rect class="hit" x="434.7" y="28" width="64.4" height="200"/><path class="bar" d="M454.9,228.0 V75.8 Q454.9,71.8 458.9,71.8 H474.9 Q478.9,71.8 478.9,75.8 V228.0 Z"/></g>
+<text class="axis-text" x="466.9" y="246" text-anchor="middle">2024</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2025年 · 共通测试：874人" data-tip="2025年 · 共通测试：874人" data-x="531.3" data-y="53.2"><rect class="hit" x="499.1" y="28" width="64.4" height="200"/><path class="bar" d="M519.3,228.0 V57.2 Q519.3,53.2 523.3,53.2 H539.3 Q543.3,53.2 543.3,57.2 V228.0 Z"/></g>
+<text class="val-text" x="531.3" y="47.2" text-anchor="middle">874</text>
+<text class="axis-text" x="531.3" y="246" text-anchor="middle">2025</text>
+<g class="mark" tabindex="0" role="listitem" aria-label="2026年 · 共通测试：866人" data-tip="2026年 · 共通测试：866人" data-x="595.8" data-y="54.8"><rect class="hit" x="563.6" y="28" width="64.4" height="200"/><path class="bar" d="M583.8,228.0 V58.8 Q583.8,54.8 587.8,54.8 H603.8 Q607.8,54.8 607.8,58.8 V228.0 Z"/></g>
+<text class="val-text" x="595.8" y="48.8" text-anchor="middle">866</text>
+<text class="axis-text" x="595.8" y="246" text-anchor="middle">2026</text>
+</svg><div class="tip" hidden></div></div>
+        <p class="note">来源：大学入试中心《受験者数・平均点の推移（本試験）》；2018–2020年数据取自中心《問題評価・分析委員会報告書》（令和7年度）中的推移表。<span class="chip ok">已核实</span></p>
+      </figure>
+      <div class="table-wrap">
+        <table>
+          <caption>平均分（百分制）：中文与英语</caption>
+          <thead><tr><th scope="col">年度</th><th scope="col" class="num">中文考生</th><th scope="col" class="num">中文</th><th scope="col" class="num">英语阅读</th><th scope="col" class="num">英语听力</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">2021（第1日程）</th><td class="num">625</td><td class="num">80.17</td><td class="num">58.80</td><td class="num">56.16</td></tr>
+            <tr><th scope="row">2022</th><td class="num">599</td><td class="num">82.39</td><td class="num">61.80</td><td class="num">59.45</td></tr>
+            <tr><th scope="row">2023</th><td class="num">735</td><td class="num">81.38</td><td class="num">53.81</td><td class="num">62.35</td></tr>
+            <tr><th scope="row">2024</th><td class="num">781</td><td class="num">86.04</td><td class="num">51.54</td><td class="num">67.24</td></tr>
+            <tr><th scope="row">2025</th><td class="num">874</td><td class="num">83.01</td><td class="num">57.69</td><td class="num">61.31</td></tr>
+            <tr><th scope="row">2026</th><td class="num">866</td><td class="num">72.94</td><td class="num">62.81</td><td class="num">54.65</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose">
+        <ul>
+          <li><strong>2026年的语种构成</strong>（含追试、再试）：外语考生456,979人，其中英语455,738人（99.73%）、中文867人（0.19%）、韩语180人、德语107人、法语87人。</li>
+          <li><strong>2026年各语种平均分</strong>（百分制）：中文72.94、韩语70.02、法语55.96、德语54.93；英语阅读62.81、听力54.65。</li>
+          <li><strong>不做分数调整。</strong>共通测试只在地理历史、公民、理科的部分科目之间做得分调整，且考生不足1万人的科目不在范围内。外语不调整，所以中文和英语的分差会原样计入总分。</li>
+          <li><strong>2026年的降分幅度。</strong>中文平均分从166.02分降到145.88分（200分制，下降20.14分），换算成百分制是83.01→72.94（下降10.07分）。<span class="chip fix">已更正</span> 初查时把两种尺度混在了一起。</li>
+        </ul>
+      </div>
+      <div class="callout">
+        <span class="callout-label">出题方的说法</span>
+        <p>大学入试中心《问题评价・分析委员会报告书》（2026年）里，高中教师写道：“可以推测中文考生中母语者较多，平均分持续高于其他高中初修外语。”中文出题部会则表示，仍以“正确评价以日语为母语的学习者在高中学到的能力”为方针，同时“应对母语者较多这一考生特点”。2024–2026年的报告书里都有同样的推测。</p>
+        <p class="note">这是推测，不是统计。入试中心不公布考生的国籍、出身或家庭语言。<span class="chip ok">已核实</span></p>
+      </div>
+      <h3>大学怎么用中文成绩</h3>
+      <div class="prose">
+        <p>共通测试允许考中文，不等于每所大学都认可。要看各大学当年的《入学者选拔要项》：</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>几所大学的做法（2027年度招生，近畿大学为2026年度起）</caption>
+          <thead><tr><th scope="col">大学</th><th scope="col">共通测试外语</th><th scope="col">本校个别考试的外语</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">东京大学</th><td>5门任选1门；选中文时用笔试200分</td><td>英、德、法、中中任选1门</td></tr>
+            <tr><th scope="row">东京外国语大学</th><td>5门任选1门</td><td>只考英语（含听力）和英语口语，共300分</td></tr>
+            <tr><th scope="row">冈山大学</th><td>5门任选1门</td><td>只考英语（如文学部前期）</td></tr>
+            <tr><th scope="row">群马大学</th><td>5门任选1门；选中文时用笔试200分</td><td>未核对</td></tr>
+            <tr><th scope="row">近畿大学 综合社会学部</th><td>2026年度起只认英语（此前可选5门）</td><td>—</td></tr>
+            <tr><th scope="row">同志社大学</th><td>多数学部和方式要求英语，只有少数方式可选5门</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">河合塾也提醒考生：不少大学不把“英语以外的外语”列为可选科目。目前没有全国性的统计，说明哪些大学认可中文。</p>
+    </section>
+    <section id="highschool" aria-labelledby="hs-h">
+      <div class="sec-head"><span class="sec-no">四、</span><h2 id="hs-h">高中阶段的中文课</h2></div>
+      <div class="prose">
+        <p><strong>中文在课程标准里没有独立位置。</strong>现行《高等学校学习指导要领》（2018年告示，2022年4月入学者起适用）的外语科只列了英语科目。中文属于“其他外语相关科目”，要“准照英语各科目的目标和内容”来教。必修科目是“英语交流Ⅰ”；学校开英语以外的外语时，可以改设1门“学校设定科目”（标准3学分）。课名、内容和学分都由学校自己定，所以全国的中文课并不统一。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>2023年度英语以外外语的开设情况（高中等）</caption>
+          <thead><tr><th scope="col">语种</th><th scope="col" class="num">开设学校</th><th scope="col" class="num">履修者（延人数）</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">中文</th><td class="num">449</td><td class="num">16,936</td></tr>
+            <tr><th scope="row">韩语・朝鲜语</th><td class="num">344</td><td class="num">13,264</td></tr>
+            <tr><th scope="row">法语</th><td class="num">188</td><td class="num">6,708</td></tr>
+            <tr><th scope="row">西班牙语</th><td class="num">107</td><td class="num">2,936</td></tr>
+            <tr><th scope="row">德语</th><td class="num">98</td><td class="num">2,407</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">来源：文部科学省《令和5年度 高等学校等における国際交流等の状況について》（2025年3月公布），这是2026年10月时的最新数据。共有603所学校开设16种英语以外的外语。<span class="chip ok">已核实</span></p>
+      <figure class="figure">
+        <figcaption><span class="fig-title" id="c2t">开设中文的高中等学校数，1999–2023年</span><span class="fig-sub">单位：所。调查隔年进行，横轴按实际年份排列。</span></figcaption>
+        <div class="chart" role="list" aria-label="各调查年份开设中文的学校数"><svg viewBox="0 0 640 252" role="img" aria-labelledby="c2t">
+<line class="gridline" x1="48" x2="620" y1="212.0" y2="212.0"/>
+<text class="axis-text" x="40" y="216.0" text-anchor="end">0</text>
+<line class="gridline" x1="48" x2="620" y1="158.3" y2="158.3"/>
+<text class="axis-text" x="40" y="162.3" text-anchor="end">200</text>
+<line class="gridline" x1="48" x2="620" y1="104.6" y2="104.6"/>
+<text class="axis-text" x="40" y="108.6" text-anchor="end">400</text>
+<line class="gridline" x1="48" x2="620" y1="50.9" y2="50.9"/>
+<text class="axis-text" x="40" y="54.9" text-anchor="end">600</text>
+<text class="axis-text" x="92.0" y="230" text-anchor="middle">2000</text>
+<text class="axis-text" x="202.0" y="230" text-anchor="middle">2005</text>
+<text class="axis-text" x="312.0" y="230" text-anchor="middle">2010</text>
+<text class="axis-text" x="422.0" y="230" text-anchor="middle">2015</text>
+<text class="axis-text" x="532.0" y="230" text-anchor="middle">2020</text>
+<path class="area" d="M70.0,212.0 L70.0,112.1 L114.0,98.1 L158.0,84.4 L202.0,64.6 L246.0,57.8 L290.0,56.2 L356.0,66.4 L400.0,73.1 L444.0,76.6 L488.0,78.5 L554.0,89.3 L598.0,91.4 L598.0,212.0 Z"/>
+<polyline class="line" points="70.0,112.1 114.0,98.1 158.0,84.4 202.0,64.6 246.0,57.8 290.0,56.2 356.0,66.4 400.0,73.1 444.0,76.6 488.0,78.5 554.0,89.3 598.0,91.4"/>
+<g class="mark" tabindex="0" role="listitem" aria-label="1999年：372所" data-tip="1999年：372所" data-x="70.0" data-y="112.1"><circle class="hit" cx="70.0" cy="112.1" r="14"/><circle class="dot" cx="70.0" cy="112.1" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2001年：424所" data-tip="2001年：424所" data-x="114.0" data-y="98.1"><circle class="hit" cx="114.0" cy="98.1" r="14"/><circle class="dot" cx="114.0" cy="98.1" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2003年：475所" data-tip="2003年：475所" data-x="158.0" data-y="84.4"><circle class="hit" cx="158.0" cy="84.4" r="14"/><circle class="dot" cx="158.0" cy="84.4" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2005年：549所" data-tip="2005年：549所" data-x="202.0" data-y="64.6"><circle class="hit" cx="202.0" cy="64.6" r="14"/><circle class="dot" cx="202.0" cy="64.6" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2007年：574所" data-tip="2007年：574所" data-x="246.0" data-y="57.8"><circle class="hit" cx="246.0" cy="57.8" r="14"/><circle class="dot" cx="246.0" cy="57.8" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2009年：580所" data-tip="2009年：580所" data-x="290.0" data-y="56.2"><circle class="hit" cx="290.0" cy="56.2" r="14"/><circle class="dot" cx="290.0" cy="56.2" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2012年：542所" data-tip="2012年：542所" data-x="356.0" data-y="66.4"><circle class="hit" cx="356.0" cy="66.4" r="14"/><circle class="dot" cx="356.0" cy="66.4" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2014年：517所" data-tip="2014年：517所" data-x="400.0" data-y="73.1"><circle class="hit" cx="400.0" cy="73.1" r="14"/><circle class="dot" cx="400.0" cy="73.1" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2016年：504所" data-tip="2016年：504所" data-x="444.0" data-y="76.6"><circle class="hit" cx="444.0" cy="76.6" r="14"/><circle class="dot" cx="444.0" cy="76.6" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2018年：497所" data-tip="2018年：497所" data-x="488.0" data-y="78.5"><circle class="hit" cx="488.0" cy="78.5" r="14"/><circle class="dot" cx="488.0" cy="78.5" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2021年：457所" data-tip="2021年：457所" data-x="554.0" data-y="89.3"><circle class="hit" cx="554.0" cy="89.3" r="14"/><circle class="dot" cx="554.0" cy="89.3" r="4"/></g>
+<g class="mark" tabindex="0" role="listitem" aria-label="2023年：449所" data-tip="2023年：449所" data-x="598.0" data-y="91.4"><circle class="hit" cx="598.0" cy="91.4" r="14"/><circle class="dot" cx="598.0" cy="91.4" r="4"/></g>
+<text class="val-text" x="70.0" y="100.1" text-anchor="start">372所</text>
+<text class="val-text" x="290.0" y="44.2" text-anchor="middle">峰值 580所</text>
+<text class="val-text" x="598.0" y="79.4" text-anchor="end">449所</text>
+</svg><div class="tip" hidden></div></div>
+        <p class="note">来源：同上报告中的“语种别开设学校数推移”表。2005年和2007年的数值在后来的报告里做过修订（当年公布为553所和819所），这里采用修订后的数值。<span class="chip ok">已核实</span></p>
+      </figure>
+      <div class="prose">
+        <ul>
+          <li><strong>覆盖面很窄。</strong>以2023年全国高中4,791所、学生2,918,501人为参照，开中文课的学校约占9%，中文履修者约占高中生的0.6%。两边统计口径不完全一致，只作参考。</li>
+          <li><strong>履修人数的峰值在2005年</strong>（22,161人）；2012年的22,061人是第二高，此后降到2023年的16,936人。<span class="chip fix">已更正</span> 初查误把2012年当成峰值。</li>
+          <li><strong>公立校以韩语为主。</strong>449所中有公立330所、私立117所、国立2所。2023年公立校的韩语・朝鲜语履修者（9,729人）已略多于中文（9,698人），中文总数居首靠的是私立校（7,177人）。</li>
+          <li><strong>更早的阶段几乎没有。</strong>2023年开中文课的中学只有15所、小学6所。</li>
+          <li><strong>课时少，师资不稳定。</strong>2005年对九州・冲绳地区的调查：多为每周1节；30所回答学校中有14所只靠外聘讲师上课；约八成教师没有指导方针可循；学生选课动机为“用中文考大学”的只占6%。</li>
+          <li><strong>典型的开课方式。</strong>例如爱媛县立新居浜南高中（2023年度）：三年级选修，2学分，教材《高校生からの中国語》（白帝社），与中文讲师合作授课，重点练口语。</li>
+        </ul>
+      </div>
+      <h3>面向中国血统学生的校内课程</h3>
+      <div class="prose">
+        <p>少数公立高中把中文当作<strong>母语或继承语</strong>来教，对象是需要日语指导的外籍或归国学生：</p>
+        <ul>
+          <li><strong>大阪府立东淀川高中</strong>（大阪府的“特别枠”校）全年级开设母语・继承语课，一年级必修。中国血统学生多，由中国籍讲师授课；毕业生升学也会用共通测试的中文成绩（2021年资料）。</li>
+          <li><strong>大阪府立门真なみはや高中</strong>的“母语中文”班读鲁迅、《史记》等原文。老师发现，日本出生或幼年来日的中国血统学生会说但几乎不会读写，只能进初级班（2025年报告）。</li>
+        </ul>
+        <p>这些课程只面向特定入学通道的学生。像案例中这样日语没有问题的日本国籍学生，在普通高中里通常找不到对应的课。</p>
+      </div>
+      <div class="callout">
+        <span class="callout-label">正在讨论的变化</span>
+        <p>中央教育审议会2026年10月5日的《审议总结》提出：公开各校的外语开课情况，研究开设线上外语讲座；英语达到CEFR B2以上的学生，可以免修必修英语，改修英语以外的外语，包括大学或专门机构开设的校外讲座；外语课还应把“与外国有关联的学生”的语言能力当作资源。目前只是方向，尚未成为制度。</p>
+      </div>
+    </section>
+    <section id="heritage" aria-labelledby="her-h">
+      <div class="sec-head"><span class="sec-no">五、</span><h2 id="her-h">华裔子女与继承语教育</h2></div>
+      <div class="prose">
+        <p>“继承语”指孩子从家庭继承、但在居住国不是主流语言的语言。在日本长大的中国家庭孩子学中文，起点和动机都不同于把中文当外语学的日本学生。</p>
+      </div>
+      <h3>有多少这样的孩子：统计只看得到一部分</h3>
+      <div class="table-wrap">
+        <table>
+          <caption>能找到的官方数字</caption>
+          <thead><tr><th scope="col">指标</th><th scope="col" class="num">数值</th><th scope="col">时间与说明</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">在留中国人</th><td class="num">930,428</td><td>2025年末，占在留外国人的22.6%，国籍中最多</td></tr>
+            <tr><th scope="row">其中0–14岁</th><td class="num">100,838</td><td>2025年末，占外籍0–14岁儿童的约30.7%</td></tr>
+            <tr><th scope="row">公立学校中需要日语指导、母语为中文的外籍学生</th><td class="num">17,821</td><td>2025年5月，占同类学生的约24%</td></tr>
+            <tr><th scope="row">中国籍归化许可者</th><td class="num">3,533</td><td>2025年，占归化总数9,258人的约38%</td></tr>
+            <tr><th scope="row">父母一方为中国人的日本国籍新生儿</th><td class="num">2,489</td><td>2025年（父日母中1,425，母日父中1,064）</td></tr>
+            <tr><th scope="row">永久归国的中国残留日本人及家属</th><td class="num">20,919</td><td>2026年8月；只计国费归国者，自费接来的家属没有统计</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="prose">
+        <p><strong>为什么日本国籍的孩子看不见。</strong>在留外国人统计只统计外国籍的人。中国《国籍法》不承认双重国籍：定居外国的中国人自愿取得外国国籍，即自动丧失中国国籍（第9条）；父母定居外国、本人出生时已取得外国国籍的，不具有中国国籍（第5条）。所以父母归化后出生、或日中家庭出生的孩子，法律上只是日本人。案例中的学生说自己是“在日日本人”“也不是纯华人”，正是这种情况。<span class="chip ok">已核实</span></p>
+      </div>
+      <h3>在哪里学：三种校外渠道</h3>
+      <div class="table-wrap">
+        <table>
+          <caption>日本的中文继承语教育场所</caption>
+          <thead><tr><th scope="col">类型</th><th scope="col">例子</th><th scope="col">特点</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">中华学校（全日制）</th><td>大陆系：横滨山手中华学校、神户中华同文学校<br>台湾系：东京中华学校、横滨中华学院、大阪中华学校</td><td>全国只有5所，都是“各种学校”，不属于《学校教育法》第1条的正规学校。横滨山手从小一开始中日双语教学，入学不问国籍；神户中华同文约650人（2022年），除“国语”外原则上用中文授课。2000年后日本国籍学生的入学申请明显增加。</td></tr>
+            <tr><th scope="row">华人团体办的周末学校</th><td>同源中文学校（1995年创办于池袋，2003年获NPO认证）</td><td>周六日上课，对象是在日华人子女，主教材为暨南大学《中文》。首都圈多个分校，2024年报道称在校生超过1,400人；东京都备案的2024年度事业报告记载受益对象1,200人。</td></tr>
+            <tr><th scope="row">民间补习班、企业教室</th><td>如东京的B-Chinese（2003年创立，都内6个教室）</td><td>4岁到初中生，中国籍讲师，使用海外华人子女用教材（《轻松学中文》、暨南大学《拼音》《中文》）。案例中的补习班属于这一类。全国数量和运营方的构成没有统计。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>研究怎么看</h3>
+      <div class="prose">
+        <ul>
+          <li><strong>流失很快。</strong>西川・刘（2020）引用Cummins・中岛（2011）：语言少数派儿童进入用当地语言授课的学校后，母语可能在2–3年内流失。</li>
+          <li><strong>中华学校的学生也以日语为主。</strong>薛・陈（2009年调查）在某中华学校调查了小五、初二共140人：日本国籍57.9%，日本出生80.7%，第一语言是日语的81.4%；日本国籍学生的中文能力和家庭中文使用都低于中国籍学生。</li>
+          <li><strong>家庭里中文只占一半。</strong>王・王（2023年调查）对31名新华侨二代的调查：日语是日常优势语言，兄弟姐妹之间很少说中文；几乎都上过中文教室或跟父母学，但和父母说话时中文也只占一半左右。</li>
+          <li><strong>三个阻碍。</strong>中家（2025）归纳为：继承语教室集中在华人聚居地区；学校重视英语，父母因此放弃继承语；亲子之间的情感负担。还有孩子认为“不会中文更容易和日本同学交朋友”。</li>
+          <li><strong>办学的难处。</strong>西川・刘（2020）整理国内实践报告：最常见的问题是讲师报酬、教材费等资金不足和场地难找；此外还有缺少专门面向继承语学习者的教材、有经验的母语教师不够，以及孩子难以坚持来上课。</li>
+        </ul>
+        <p class="note">相关研究集中在“母语・继承语・双语教育（MHB）学会”（2003年成立研究会，2018年改为学会）及其刊物。</p>
+      </div>
+    </section>
+    <section id="materials" aria-labelledby="mat-h">
+      <div class="sec-head"><span class="sec-no">六、</span><h2 id="mat-h">教材与考试</h2></div>
+      <div class="prose">
+        <p>案例中“用的哪一本书”还没有答案。下面是日本的华裔中文教育里常见的教材，可以拿来对照。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>常见教材</caption>
+          <thead><tr><th scope="col">教材</th><th scope="col">编者 / 出版</th><th scope="col">对象与特点</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">《中文》</th><td>暨南大学华文学院，国务院侨办委托（1996年试用版）</td><td>原为欧美周末制中文学校的华裔小学生而编。修订版共52册，每册12课，第1–4册全文注拼音。2020版改名《中文》（小学版）12册，另有初中版6册，内容与修订版相同。日本的同源中文学校、B-Chinese都在用。</td></tr>
+            <tr><th scope="row">《汉语》</th><td>北京华文学院，中国海外交流协会委托（1998年初版）</td><td>面向亚洲全日制华文学校，主教材12册，每册15课。横滨山手中华学校小学部使用（2007年资料）。</td></tr>
+            <tr><th scope="row">《轻松学中文》</th><td>马亚敏、李欣颖，北京语言大学出版社</td><td>面向非华裔背景学生，小学高年级到中学，共7册。</td></tr>
+            <tr><th scope="row">《快乐汉语》</th><td>李晓琪，人民教育出版社</td><td>11–16岁，原国家汉办与英国文化协会合作，在英国中学试用。</td></tr>
+            <tr><th scope="row">《学华语向前走》</th><td>台湾侨务委员会</td><td>台湾方面的华语教材。大阪中华学校使用与台湾相同的教科书（2010年报告）。</td></tr>
+            <tr><th scope="row">《高校中国語》《高校生からの中国語》</th><td>白帝社（日本）</td><td>日本高中中文课的常用教材，面向以日语为母语的初学者。</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">暨南大学已编写近300种华文教材，全球发行超过5,000万册（人民日报，2026年9月）。日本的民间补习班具体用哪套教材，没有调查数据。</p>
+      <div class="table-wrap">
+        <table>
+          <caption>可作为学习目标的考试</caption>
+          <thead><tr><th scope="col">考试</th><th scope="col">级别</th><th scope="col">要点</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">HSK（汉语水平考试）</th><td>现行1–6级（词汇150–5,000）；口试HSKK初・中・高级</td><td>中国考试机构宣布HSK 3.0（三等九级）于2026年12月13日在全球正式实施；日本国内2026年内的考试仍按HSK 2.0进行，2027年以后的安排未定。日本考生约4万人（2019年）。</td></tr>
+            <tr><th scope="row">YCT（中小学生汉语考试）</th><td>笔试1–4级（日本的介绍为1–5级，5级暂不实施）；口试初级、中级</td><td>面向中文非母语的少年儿童，日本由HSK日本实施委员会面向15岁以下实施。</td></tr>
+            <tr><th scope="row">中国語検定（日本中国语检定）</th><td>准4级、4级、3级、2级、准1级、1级</td><td>日本本土的考试。2026年6月第118回一次考试3,888人报考。双向翻译从2级开始出现，准1级以上有面试。</td></tr>
+            <tr><th scope="row">TECC</th><td>1000分制，A–F共6个等级</td><td>面向商务交流的分数制考试；一般公开考试目前因改版暂停。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="analysis" aria-labelledby="ana-h">
+      <div class="sec-head"><span class="sec-no">七、</span><h2 id="ana-h">分析：把案例放回制度里看</h2></div>
+      <div class="prose">
+        <p><strong>1. 学校体系留下了空白，由市场来补。</strong>约91%的高中不开中文课；开课的学校也多是每周一两节的选修课，按“初学外语”来设计。对一个家里说中文、但读写跟不上的学生来说，学校的课既不存在，也不对路。于是中国家长把孩子送到校外补习班，这和案例的情况完全吻合。</p>
+        <p><strong>2. 同一门“中文”，其实有两类学习者。</strong>制度把中文当作“英语以外的外语”：学习指导要领、高中教材、共通测试的出题方针，都以日语母语的初学者为对象。而入试中心的报告书推测，实际考共通测试中文的人以母语者居多。两类学习者被放进同一个框架里，所以才会出现中文平均分常年比英语阅读高出20–35分、2026年又靠改题拉低的情况。</p>
+        <p><strong>3. 共通测试是补习班的“出口”，但这条路不宽。</strong>中文分数高、不考听力，对继承语学习者有吸引力。但东京外国语大学、冈山大学等的个别考试只考英语，近畿大学的一个学部已经取消中文选项，同志社大学多数方式要求英语。只靠中文升学，选择面会明显变窄。</p>
+        <p><strong>4. 身份认同和统计都是“看不见”的。</strong>这位学生是日本国籍，家人却说她“也不是纯华人”。官方统计同样看不到这类孩子：在留外国人统计只算外籍，日本国籍的中国血统孩子没有总数。研究者能用的只有归化人数、国际婚姻出生数等零散指标。</p>
+        <p><strong>5. 政策可能往“承认校外学习”的方向走。</strong>中教审2026年的审议总结提出，可以用校外讲座替代部分英语必修，并把外国关联学生的语言能力当作资源。如果落地，像案例中这样的补习班学习，将来也许能在学校里得到认可。</p>
+        <p class="note">局限：案例只有一位学生，信息来自家人的转述；补习班的运营方、师资和教材都还需要直接确认。</p>
+      </div>
+    </section>
+    <section id="next" aria-labelledby="next-h">
+      <div class="sec-head"><span class="sec-no">八、</span><h2 id="next-h">后续调研：还可以问的问题</h2></div>
+      <div class="prose"><p>可以直接发给朋友或补习班。拍一张教材封面，就能确定第1题。</p></div>
+      <ol class="qs">
+        <li>补习班用的是哪套教材？是暨南大学《中文》、中国国内的语文课本、日本出版的中文教材，还是老师自编的？</li>
+        <li>补习班由谁运营？老师都是中国人，还是中日老师都有？老师有没有教师资格或教学经验？</li>
+        <li>一个班多少人？学生年龄、国籍分布怎样？是否几乎都来自中国家庭？</li>
+        <li>每周上几次、每次多长时间？学费大约多少？</li>
+        <li>补习班有没有明确的目标，比如HSK、YCT、中国語検定，或者共通测试？</li>
+        <li>妹妹在家主要说什么语言？听说和读写分别到什么程度？</li>
+        <li>她是否打算用中文考共通测试？想报考的大学认不认可中文？</li>
+        <li>家长为什么让孩子学中文：和亲戚交流、身份认同、升学，还是将来工作？</li>
+      </ol>
+    </section>
+    <section id="sources" aria-labelledby="src-h">
+      <div class="sec-head"><span class="sec-no">九、</span><h2 id="src-h">资料来源</h2></div>
+      <p class="note">所有链接于2026年10月访问。每条数据都由另一位核查者独立打开原始资料核对；状态见右侧标记。</p>
+      <ul class="sources">
+        <li><span class="src-title">大学入试中心《共通テスト 受験者数・平均点の推移（本試験）》<a class="src-url" href="https://www.dnc.ac.jp/kyotsu/suii/R3_.html">dnc.ac.jp/kyotsu/suii/R3_.html</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">大学入试中心《令和8年度大学入学共通テスト 実施結果の概要》<a class="src-url" href="https://www.dnc.ac.jp/albums/abm.php?d=2126&amp;f=abm00006108.pdf">dnc.ac.jp … abm00006108.pdf</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">大学入试中心《令和9年度 出題教科・科目の出題方法等》<a class="src-url" href="https://www.dnc.ac.jp/albums/abm.php?d=753&amp;f=abm00005360.pdf">dnc.ac.jp … abm00005360.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">大学入试中心《令和9年度 実施要項》（得分调整规定）<a class="src-url" href="https://www.dnc.ac.jp/albums/abm.php?d=753&amp;f=abm00017382.pdf">dnc.ac.jp … abm00017382.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">大学入试中心《令和8年度 問題評価・分析委員会報告書『中国語』》高中评价、自我评价<a class="src-url" href="https://www.dnc.ac.jp/albums/abm.php?d=2151&amp;f=abm00017679.pdf">dnc.ac.jp … abm00017679.pdf</a><a class="src-url" href="https://www.dnc.ac.jp/albums/abm.php?d=2151&amp;f=abm00017678.pdf">dnc.ac.jp … abm00017678.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">大学入试中心《令和7年度 問題評価・分析委員会報告書『中国語』》（2018–2020年数据）<a class="src-url" href="https://www.dnc.ac.jp/albums/abm.php?d=768&amp;f=abm00005525.pdf">dnc.ac.jp … abm00005525.pdf</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">东京大学、东京外国语大学、冈山大学、群马大学 2027年度招生要项；近畿大学综合社会学部变更预告；同志社大学2027年度共通测试利用入试<a class="src-url" href="https://www.u-tokyo.ac.jp/content/400243934.pdf">u-tokyo.ac.jp/content/400243934.pdf</a><a class="src-url" href="https://www.tufs.ac.jp/documents/admission/exam/2027_yoko.pdf">tufs.ac.jp … 2027_yoko.pdf</a><a class="src-url" href="https://www.kindai.ac.jp/sociology/news/important/_upload/c404141f62de24e756fcfa99e690ebb90a39b823.pdf">kindai.ac.jp … 预告PDF</a><a class="src-url" href="https://www.doshisha.ac.jp/files/nyugk/news/2027kyotsutest.pdf">doshisha.ac.jp … 2027kyotsutest.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">文部科学省《高等学校学習指導要領（平成30年告示）》<a class="src-url" href="https://www.mext.go.jp/content/20230120-mxt_kyoiku02-100002604_03.pdf">mext.go.jp … 100002604_03.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">文部科学省《令和5年度 高等学校等における国際交流等の状況について》<a class="src-url" href="https://www.mext.go.jp/a_menu/koutou/ryugaku/koukousei/20250331-mext_kyokoku_01.pdf">mext.go.jp … 20250331-mext_kyokoku_01.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">文部科学省 历年《高等学校等における国際交流等の状況について》（履修人数推移；2005年数据见国会图书馆WARP存档）<a class="src-url" href="https://www.mext.go.jp/a_menu/koutou/ryugaku/koukousei/1323946.htm">mext.go.jp … 1323946.htm</a><a class="src-url" href="https://warp.ndl.go.jp/20091026/20091021095755/www.mext.go.jp/b_menu/houdou/17/10/05102501/001.pdf">warp.ndl.go.jp … 05102501/001.pdf</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">中央教育审议会教育课程部会《次期学習指導要領等に向けた審議まとめ》（2026年10月5日）<a class="src-url" href="https://www.mext.go.jp/content/20261005-mxt_kyoiku01-000052367-1.pdf">mext.go.jp … 000052367-1.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">堀地明《九州沖縄地区における高校中国語教育の現状》北九州市立大学外国语学部纪要第117号（2006）<a class="src-url" href="https://kitakyu.repo.nii.ac.jp/record/80/files/%E5%A4%96-%28117%29-8.pdf">kitakyu.repo.nii.ac.jp/record/80</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">东京学艺大学（文部科学省委托）听证资料《大阪府立東淀川高校における外国人生徒等の教育》（2021）<a class="src-url" href="https://www2.u-gakugei.ac.jp/~knihongo/chousa/upload/02_3_1.pdf">u-gakugei.ac.jp … 02_3_1.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">小川典子等《継承語としての中国語教育を考える》《中国語教育》第23号（2025）<a class="src-url" href="https://www.jstage.jst.go.jp/article/jacle/23/0/23_2/_pdf/-char/ja">jstage.jst.go.jp … jacle/23/0/23_2</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">出入国在留管理厅《令和7年末現在における在留外国人数について》及在留外国人统计（e-Stat）<a class="src-url" href="https://www.moj.go.jp/isa/publications/press/13_00062.html">moj.go.jp/isa/publications/press/13_00062.html</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">法务省民事局《国籍別帰化許可者数》；厚生劳动省《人口動態統計》（父母国籍别出生数）；厚生劳动省《中国残留邦人等の状況》<a class="src-url" href="https://www.moj.go.jp/content/001458303.pdf">moj.go.jp/content/001458303.pdf</a><a class="src-url" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/bunya/engo/seido02/kojitoukei.html">mhlw.go.jp … kojitoukei.html</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">文部科学省《外国人児童生徒等の教育の充実に関する現状と課題について》参考资料（2026年6月）<a class="src-url" href="https://www.mext.go.jp/content/20260630-mxt_kyokoku-000050315_003.pdf">mext.go.jp … 000050315_003.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">《中华人民共和国国籍法》（1980）第3、5、9条<a class="src-url" href="https://www.12371.cn/2020/06/29/ARTI1593364070469467.shtml">12371.cn … ARTI1593364070469467</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">文部科学省《外国人学校について》；横滨山手中华学校官网；神户新闻（2022年10月7日）<a class="src-url" href="https://www.mext.go.jp/a_menu/kokusai/gaikoku/index.htm">mext.go.jp/a_menu/kokusai/gaikoku</a><a class="src-url" href="https://www.yycs.ed.jp/jp/school/gaidance/gaidance.html">yycs.ed.jp</a><a class="src-url" href="https://www.kobe-np.co.jp/news/sougou/202210/0015704424.shtml">kobe-np.co.jp … 0015704424</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">全日本华侨华人社团联合会（2024年1月）；中国华文教育网“同源中国语学校”；东京都NPO法人事业报告书（2024年度）<a class="src-url" href="https://www.ucrj.jp/news20240131/">ucrj.jp/news20240131</a><a class="src-url" href="https://www.hwjyw.com/article/14907.html">hwjyw.com/article/14907.html</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">B-Chinese《子供中国語クラス》<a class="src-url" href="https://www.b-chinese.com/course/kids/">b-chinese.com/course/kids</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">西川朋美・刘蓉蓉《日本で育つ外国ルーツの子ども・若者と継承語学習》《子どもの日本語教育研究》第3号（2020）<a class="src-url" href="https://www.jstage.jst.go.jp/article/kodomonihongo/3/0/3_18/_pdf">jstage.jst.go.jp … kodomonihongo/3</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">薛鸣・陈于华《在日中国人子女の言語使用意識とエスニシティ》《言語と文化》第26号（2012）<a class="src-url" href="https://taweb.aichi-u.ac.jp/tgoken/bulletin/pdfs/NO26/03p31-49Xue.pdf">taweb.aichi-u.ac.jp … 03p31-49Xue.pdf</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">王秀芳・王紫琪《在日中国人ニューカマー2世の言語使用について》《東アジア文化研究》第11号（2024）<a class="src-url" href="https://k-rain.repo.nii.ac.jp/record/2000955/files/higashiajia_11_002.pdf">k-rain.repo.nii.ac.jp/record/2000955</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">中家晶瑛《日本で生まれ育った外国ルーツの子どもが継承語を学ぶとき》《子どもの日本語教育研究》第8号（2025）<a class="src-url" href="https://www.jstage.jst.go.jp/article/kodomonihongo/8/0/8_37/_article/-char/ja">jstage.jst.go.jp … kodomonihongo/8</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">母语・继承语・双语教育（MHB）学会“沿革”<a class="src-url" href="https://mhb.jp/history/">mhb.jp/history</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">中国华文教育网《〈中文〉（修订版）教材介绍》《华文教材》；全美中文学校协会《〈中文〉教材2020版新版本说明》<a class="src-url" href="https://hwjyw.com/hwjc/cate/1.html">hwjyw.com/hwjc/cate/1.html</a><a class="src-url" href="https://hwjyw.com/hwjc/cate/2.html">hwjyw.com/hwjc/cate/2.html</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">HSK日本实施委员会《2026年実施のHSK試験について》《YCTとは》；中文考试服务网HSK 3.0公告<a class="src-url" href="https://www.hskj.jp/hsk3_info01/">hskj.jp/hsk3_info01</a><a class="src-url" href="https://www.hskj.jp/lp/yct01/">hskj.jp/lp/yct01</a></span><span class="chip ok">已核实</span></li>
+        <li><span class="src-title">日本中国语检定协会《出題内容》《試験結果》<a class="src-url" href="https://www.chuken.gr.jp/tcp/grade.html">chuken.gr.jp/tcp/grade.html</a></span><span class="chip fix">已更正</span></li>
+        <li><span class="src-title">TECC官网<a class="src-url" href="https://www.tecc-exam.info/">tecc-exam.info</a></span><span class="chip ok">已核实</span></li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>本报告用于课程作业的前期调研。案例只有一位学生，不能代表在日华裔子女的整体情况；制度数据来自公开资料，标注了年度和来源，引用前请打开原始链接再确认一次。</p>
+    <p>状态标记：<span class="chip ok">已核实</span> 与原始资料一致；<span class="chip fix">已更正</span> 初查有误，已按原始资料改正；<span class="chip unk">待确认</span> 没能找到可靠的原始资料；<span class="chip chat">来自对话</span> 仅来自案例对话。</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  document.querySelectorAll('.chart').forEach(function (box) {
+    var svg = box.querySelector('svg'), tip = box.querySelector('.tip');
+    if (!svg || !tip) return;
+    function show(g) {
+      var vb = svg.viewBox.baseVal, r = svg.getBoundingClientRect(), k = r.width / vb.width;
+      tip.textContent = g.getAttribute('data-tip');
+      tip.style.left = (svg.offsetLeft + parseFloat(g.getAttribute('data-x')) * k) + 'px';
+      tip.style.top = (svg.offsetTop + parseFloat(g.getAttribute('data-y')) * k - 10) + 'px';
+      tip.hidden = false;
+    }
+    function hide() { tip.hidden = true; }
+    svg.querySelectorAll('.mark').forEach(function (g) {
+      g.addEventListener('mouseenter', function () { show(g); });
+      g.addEventListener('focus', function () { show(g); });
+      g.addEventListener('mouseleave', hide);
+      g.addEventListener('blur', hide);
+    });
+  });
+})();
+</script>
+</body>
+</html>
